@@ -2,10 +2,14 @@ package com.ethoca.ShoppingCart.services;
 
 import com.ethoca.ShoppingCart.entities.CustomerEntity;
 import com.ethoca.ShoppingCart.entities.ProductEntity;
+import com.ethoca.ShoppingCart.entities.ShoppingCartEntity;
 import com.ethoca.ShoppingCart.models.CustomerRs;
 import com.ethoca.ShoppingCart.models.ProductRs;
+import com.ethoca.ShoppingCart.models.ShoppingCartRs;
 import com.ethoca.ShoppingCart.repositories.CustomerRepository;
 import com.ethoca.ShoppingCart.repositories.ProductRepository;
+import com.ethoca.ShoppingCart.repositories.ShoppingCartItemRepository;
+import com.ethoca.ShoppingCart.repositories.ShoppingCartRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,4 +28,5 @@ public class ProductServiceImp implements ProductService {
         ProductRs productRs = new ProductRs(productList);
         return productRs;
     }
+
 }
