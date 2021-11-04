@@ -18,7 +18,7 @@ public class CustomerServiceImp implements CustomerService {
     @Override
     public CustomerRs getCustomerInfo() {
         List<CustomerEntity> customerList = customerRepository.findAll().stream().collect(Collectors.toList());
-        Mic
+        CustomerRs customerRs = new CustomerRs(customerList);
         return customerRs;
     }
 

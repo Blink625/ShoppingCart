@@ -3,3 +3,12 @@ spring:
     console.path: /h2-console
     console.settings.trace: false
     spring.h2.console.settings.web-allow-others: false
+
+    server:
+      ssl:
+        key-store: classpath:keystore.p12
+        key-store-password: Ethoca
+        key-store-type: pkcs12
+        key-alias: springboot
+        key-password: Ethoca
+        port: 8444
