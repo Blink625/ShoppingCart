@@ -22,7 +22,6 @@ import java.util.Map;
 public class ProductController {
 
     private final ProductService productService;
-    private final ShoppingCartService shoppingCartService;
 
     @GetMapping(value = "/product", headers = {"Accept=application/x.ethoca.customerInfo.v1+json",
             Common.ACCEPT_LANGUAGE_EN})
@@ -40,19 +39,5 @@ public class ProductController {
         }
     }
 
-    @PostMapping(value = "/cart", headers = {"Accept=application/x.ethoca.customerInfo.v1+json",
-            Common.ACCEPT_LANGUAGE_EN})
-    public ResponseEntity createShoppingCart(@RequestBody JsonNode jsonNode) {
-        Map<String, Object> bodyObject = new LinkedHashMap<>();
-        try {
-            ShoppingCartRs shoppingCartRs = shoppingCartService.createShoppingCart();
-            bodyObject.put("cart", shoppingCartRs);
-            return ResponseEntity.status(HttpStatus.OK).body(bodyObject);
 
-        } catch (Exception exception) {
-            bodyObject.put("status","fail");
-            bodyObject.put("message",exception.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(bodyObject);
-        }
-    }
 }
